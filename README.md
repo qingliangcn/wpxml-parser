@@ -1,6 +1,6 @@
 # wpxml-parser
 
-translator wodpress xml data to array and object 
+translator wordpress xml data to array and object 
 
 ## 安装
 
