@@ -1,6 +1,6 @@
 # wpxml-parser
 
-translator wodpress xml data to array
+translator wodpress xml data to array and object 
 
 ## 安装
 
@@ -14,8 +14,9 @@ composer require qingliangcn/wpxml-parser
 
 在[release](https://github.com/qingliangcn/wpxml-parser/releases)中选择最新版本并下载，解压后在项目中适当位置引入 src/WPXmlParser.php
 
-
 ## 使用
+
+### 方法1：数组形式
 
 ```php
 $parser = new \qingliangcn\WPXmlTranslator\WPXmlTranslator();
@@ -80,6 +81,63 @@ array(7) {
 }
 ```
 
+### 方法2:对象形式
+
+```php
+$parser = new \qingliangcn\WPXmlTranslator\WPXmlTranslator();
+
+$result = $parser->parse("wordpress.xml");
+
+$title = $parser->title;
+$blogUrl = $parser->base_blog_url;
+$posts = $parser->posts;
+```
+
 ### 注意
 
 如果xml文件不存在，则会抛出异常，类型为Exception.
+
+## 返回数据
+
+一级信息
+
+| key | type | description |
+|---|---|---|
+| title | string | 博客标题 |
+| wp_version | string | wordpress版本号 |
+| author | array | 作者信息 |
+| posts | array | 文章列表 |
+| description | string | 博客描述 |
+| base_site_url | string | 站点地址 |
+| base_blog_url | string | 博客地址 |
+
+作者信息(author)
+
+| key | type | description |
+|---|---|---|
+| author_id | int | 作者用户ID |
+| author_login | string | 作者登陆用户名 |
+| author_email | array | 作者email |
+| author\_display_name | array | 作者显示名称 |
+| author\_first_name | string | 作者名 |
+| author\_last_name | string | 作者姓 |
+
+
+文章信息(posts)
+
+| key | type | description |
+|---|---|---|
+| title | string | 博客标题 |
+| wp_version | string | wordpress版本号 |
+| author | array | 作者信息 |
+| posts | array | 文章列表 |
+| description | string | 博客描述 |
+| base_site_url | string | 站点地址 |
+| base_blog_url | string | 博客地址 |
+
+
+## Todo
+
+1. 支持page导出
+2. 完整post信息导出
+3. 支持多媒体导出

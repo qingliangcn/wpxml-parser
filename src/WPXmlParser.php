@@ -4,6 +4,45 @@ namespace qingliangcn\WPXmlTranslator;
 class WPXmlTranslator 
 {
     /**
+     * wordpress version
+     * @var string
+     */
+    public $wp_version;
+
+    /**
+     * posts of blog
+     * @var array
+     */
+    public $posts = [];
+
+    /**
+     * @var array
+     */
+    public $author = [];
+
+    /**
+     * description of blog site
+     * @var string
+     */
+    public $description;
+
+    /**
+     * @var string
+     */
+    public $base_site_url;
+
+    /**
+     * @var string
+     */
+    public $base_blog_url;
+
+    /**
+     * @var string
+     */
+    public $title = "";
+
+
+    /**
      * 解析xml数据文件
      *
      * @param $xmlFile string
@@ -15,11 +54,14 @@ class WPXmlTranslator
             throw new \Exception("File not exists: {$xmlFile}");
         }
 
+        $this->_init();
+
         $result = array();
 
         $xml = simplexml_load_file($xmlFile);
         $generator = (string)$xml->channel->generator;
         $description = (string)$xml->channel->description;
+        $title = (string)$xml->channel->title;
 
         $wordpressVersion = str_replace("https://wordpress.org/?v=", "", $generator);
         $articles = $xml->channel->item;
@@ -74,14 +116,24 @@ class WPXmlTranslator
 
         }
 
-        $result['generator'] = $generator;
-        $result['posts'] = $posts;
-        $result['wp_version'] = $wordpressVersion;
-        $result['author'] = $authorInfo;
-        $result['description'] = $description;
-        $result['base_site_url'] = $baseSiteUrl;
-        $result['base_blog_url'] = $baseBlogUrl;
+        $this->posts = $result['posts'] = $posts;
+        $this->wp_version = $result['wp_version'] = $wordpressVersion;
+        $this->author = $result['author'] = $authorInfo;
+        $this->description = $result['description'] = $description;
+        $this->base_site_url = $result['base_site_url'] = $baseSiteUrl;
+        $this->base_blog_url = $result['base_blog_url'] = $baseBlogUrl;
+        $this->title = $result['title'] = $title;
 
         return $result;
+    }
+
+    private function _init() {
+        $this->title = "";
+        $this->posts = [];
+        $this->wp_version = "";
+        $this->author = [];
+        $this->description = "";
+        $this->base_site_url = "";
+        $this->base_blog_url = "";
     }
 }
