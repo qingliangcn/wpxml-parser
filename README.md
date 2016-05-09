@@ -42,6 +42,8 @@ array(7) {
       string(0) ""
       ["excerpt"]=>
       string(0) ""
+      ["content"]=>
+      string(0) "post content is here"
       ["creator"]=>
       string(5) "admin"
       ["categoryStr"]=>
