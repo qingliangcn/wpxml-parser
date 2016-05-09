@@ -19,7 +19,7 @@ composer require qingliangcn/wpxml-parser
 ### 方法1：数组形式
 
 ```php
-$parser = new \qingliangcn\WPXmlTranslator\WPXmlTranslator();
+$parser = new \qingliangcn\WPXmlParser\WPXmlParser();
 $result = $parser->parse("wordpress.xml");
 ```
 
@@ -84,7 +84,7 @@ array(7) {
 ### 方法2:对象形式
 
 ```php
-$parser = new \qingliangcn\WPXmlTranslator\WPXmlTranslator();
+$parser = new \qingliangcn\WPXmlParser\WPXmlParser();
 
 $result = $parser->parse("wordpress.xml");
 

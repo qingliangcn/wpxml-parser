@@ -1,7 +1,7 @@
 <?php
-namespace qingliangcn\WPXmlTranslator;
+namespace qingliangcn\WPXmlParser;
 
-class WPXmlTranslator 
+class WPXmlParser
 {
     /**
      * wordpress version
