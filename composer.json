@@ -1,0 +1,17 @@
+{
+    "name": "qingliangcn/wpxml-parser",
+    "description": "translator wodpress xml data to array",
+    "keywords": ["wordpress", "xml", "php", "array"],
+    "license": "MIT",
+    "homepage": "http://github.com/qingliangcn/wpxml-parse",
+    "authors": [
+        {
+            "name": "qingliangcn",
+            "email": "qing.liang.cn@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "php": ">=5.5.0"
+    }
+}
