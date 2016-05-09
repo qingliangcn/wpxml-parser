@@ -12,7 +12,7 @@ composer require qingliangcn/wpxml-parser
 
 ###Download the Release
 
-在[release](https://github.com/qingliangcn/wpxml-parser/releases)中选择最新版本并下载，解压后在项目中适当位置引入WPXmlParser.php，具体使用:
+在[release](https://github.com/qingliangcn/wpxml-parser/releases)中选择最新版本并下载，解压后在项目中适当位置引入 src/WPXmlParser.php
 
 
 ## 使用
