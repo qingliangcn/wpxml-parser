@@ -90,7 +90,14 @@ $result = $parser->parse("wordpress.xml");
 
 $title = $parser->title;
 $blogUrl = $parser->base_blog_url;
+//文章列表
 $posts = $parser->posts;
+//分类列表
+$categories = $parser->categories;
+//tag列表
+$tags = $parser->tags;
+//多媒体(图片、附件等)列表
+$attachments = $parser->attachments;
 ```
 
 ### 注意
@@ -138,6 +145,6 @@ $posts = $parser->posts;
 
 ## Todo
 
-1. 支持page导出
+1. ~~支持page导出~~
 2. 完整post信息导出
-3. 支持多媒体导出
+3. ~~支持多媒体导出~~
