@@ -166,10 +166,12 @@ class WPXmlParser
                 ];
             } else if ($postType == 'post') {
                 $categories = [];
+                $postTags = [];
                 foreach($item->category as $category)
                 {
-                    if($category['nicename'] != "uncategorized" && $category['domain'] == "category")
-                    {
+                    if ($category['domain'] == 'post_tag') {
+                        $postTags[] = (string)$category;
+                    } else if($category['nicename'] != "uncategorized" && $category['domain'] == "category") {
                         $categories[] = (string)$category;
                     }
                 }
@@ -185,7 +187,8 @@ class WPXmlParser
                     'excerpt' => $excerpt,
                     'creator' => $creator,
                     'categoryStr' => $category,
-                    'categories' => $categories
+                    'categories' => $categories,
+                    'tags' => $postTags
                 ];
             }
         }

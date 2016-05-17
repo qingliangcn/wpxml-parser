@@ -114,6 +114,9 @@ $attachments = $parser->attachments;
 | wp_version | string | wordpress版本号 |
 | author | array | 作者信息 |
 | posts | array | 文章列表 |
+| tags | array | tag列表 |
+| pages | array | page列表 |
+| attachments | array | 附件列表 |
 | description | string | 博客描述 |
 | base_site_url | string | 站点地址 |
 | base_blog_url | string | 博客地址 |
@@ -134,13 +137,16 @@ $attachments = $parser->attachments;
 
 | key | type | description |
 |---|---|---|
-| title | string | 博客标题 |
-| wp_version | string | wordpress版本号 |
-| author | array | 作者信息 |
-| posts | array | 文章列表 |
-| description | string | 博客描述 |
-| base_site_url | string | 站点地址 |
-| base_blog_url | string | 博客地址 |
+| title | string | 文章标题 |
+| link | string | 文章地址 |
+| pubData | string | 格式化的时间, 2015-06-05 23:11:03 |
+| description | string | 文章描述 |
+| content | string | 文章内容 |
+| excerpt | string |  |
+| creator | string | 文章作者 |
+| categoryStr | string | 分类字符串 |
+| categories | array | 分类数组 |
+| tags | array | tags |
 
 
 ## Todo
