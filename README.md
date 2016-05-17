@@ -142,7 +142,7 @@ $attachments = $parser->attachments;
 | pubData | string | 格式化的时间, 2015-06-05 23:11:03 |
 | description | string | 文章描述 |
 | content | string | 文章内容 |
-| excerpt | string |  |
+| excerpt | string | 文章摘要 |
 | creator | string | 文章作者 |
 | categoryStr | string | 分类字符串 |
 | categories | array | 分类数组 |
